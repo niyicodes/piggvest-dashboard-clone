@@ -123,7 +123,7 @@ const Register = styled.main`
    input[type="submit"] {
     width: 100%;
     padding: 16px;
-    background-color: #0d60d8;
+    background-color: #083E9E;
     color: white;
     border: none;
     outline: none;
@@ -131,7 +131,7 @@ const Register = styled.main`
     border-bottom-left-radius: 0px;
     cursor: pointer;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
 
     &:hover {
