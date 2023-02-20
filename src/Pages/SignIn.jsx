@@ -32,7 +32,7 @@ const SignIn = () => {
      <Link to="/register">
       <p>Don't have an account? Register</p>
      </Link>
-     <Link to="/">Forgot Password?</Link>
+     <Link to="/forgot">Forgot Password?</Link>
     </div>
    </div>
   </Login>
