@@ -1,9 +1,199 @@
-import React from 'react'
-
+import React from "react";
+import styled from "styled-components";
+import { BiRefresh } from "react-icons/bi";
+import Button from "../Components/Button/Button";
+import HorizontalCard from "../Components/Card/HorizontalCard";
+import horizontalCardDetails from "../Components/Card/horizontalcardDetails";
+import { At1, Lock, Thumb, Circle } from "../Components/Icons/Icons";
+import RadioList from "../Components/Li/RadioList";
+import Started from "/assets/get_started_2.jpg";
+import Andriod from "/assets/andriod.png";
+import Ios from "/assets/ios.png";
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+ return (
+  <HomePage>
+   <div className="top">
+    <div className="top-first">
+     <div>
+      <h2>NAME,</h2>
+      <p>wash your hands, it's lunch time !</p>
+     </div>
+     <div>
+      <img src="" alt="" />
+     </div>
+    </div>
+    <div className="top-second">
+     <BiRefresh />
+     <Button name="+ QUICK SAVE" />
+    </div>
+   </div>
+   <div className="middle">
+    <div className="middle-first">
+     {horizontalCardDetails.map((item, index) => {
+      return (
+       <HorizontalCard
+        icon={item.icon}
+        key={index}
+        name={item.name}
+        balance={item.balance}
+        bgColor={item.bgColor}
+        colour={item.colour}
+       />
+      );
+     })}
+    </div>
+    <div className="middle-second">
+     <div className="middle-second-left">
+      <div className="middle-second-left-top">
+       <p>TO-DO LIST</p>
+       <RadioList
+        title="Turn on your Piggybank AutoSave"
+        onClick={() => console.log("testing")}
+        icon={Circle}
+        border="2px solid grey"
+       />
+       <RadioList
+        title="Safelock ₦30,000 for 61 - 90 days"
+        onClick={() => console.log("testing")}
+        icon={Circle}
+        border="2px solid grey"
+       />
+      </div>
+      <div className="middle-second-left-bottom">
+       <RadioList
+        title="See your recent activities"
+        subtitle="See your most recent activities on PiggyVest"
+        color="#0D60D8"
+        border="2px solid #0D60D8"
+        onClick={() => console.log("testing")}
+        icon={Thumb}
+       />
+       <RadioList
+        title="Create a Safelock"
+        subtitle="Avoid spending temptations. Tap to create a Safelock"
+        color="#2295F2"
+        border="2px solid #2295F2"
+        onClick={() => console.log("testing")}
+        icon={Lock}
+       />
+       <RadioList
+        title="Link your Pocket App"
+        subtitle="Withdraw from your PiggyVest safer & faster "
+        color="#7913E5"
+        border="2px solid #7913E5"
+        onClick={() => console.log("testing")}
+        icon={At1}
+       />
+      </div>
+     </div>
+     <div className="middle-second-right">
+      <div className="middle-second-right-top">
+       <h6>GET STARTED WITH PIGGYVEST</h6>
+       <img src={Started} alt="" />
+      </div>
+      <div className="middle-second-right-bottom">
+       <h6>DOWNLOAD THE MOBILE APP</h6>
+       <div className="app">
+        <img src={Ios} alt="" />
+        <img src={Andriod} alt="" />
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div></div>
+   <div></div>
+  </HomePage>
+ );
+};
+const HomePage = styled.section`
+ margin: 1rem 2rem 1rem 1rem;
+ .top {
+  &-first {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-bottom: 2rem;
+   h2 {
+    font-size: 50px;
+   }
+   p {
+    font-size: 25px;
+    color: #b1adad;
+    font-weight: bold;
+   }
+  }
+  &-second {
+   display: flex;
+   justify-content: space-between;
+   margin: 0 3rem 0 0;
 
-export default Home
+   svg {
+    font-size: 30px;
+    font-weight: bolder;
+   }
+   button {
+    padding: 10px 20px;
+    background-color: rgb(13, 96, 216);
+    outline: none;
+    border: none;
+    border-radius: 10px 7px 7px 0;
+    color: white;
+   }
+  }
+ }
+ .middle {
+  &-first {
+   display: inline-block;
+   width: 100%;
+   cursor: pointer;
+   overflow-x: scroll;
+   white-space: nowrap;
+   padding-right: 1.5rem;
+   margin-bottom: 2rem;
+
+   svg {
+    color: white;
+   }
+  }
+  &-second {
+   display: flex;
+   flex-direction: row;
+   gap: 2rem;
+
+   &-left {
+    width: 60%;
+    &-top,
+    &-bottom {
+     margin-bottom: 2.5rem;
+    }
+   }
+   &-right {
+    width: 35%;
+    &-top {
+     margin-top: 20px;
+     margin-bottom: 2rem;
+     img {
+      padding-top: 10px;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+     }
+    }
+    &-bottom{
+      .app{
+        display:flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        img{
+          display: block;
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+   }
+  }
+ }
+`;
+export default Home;
