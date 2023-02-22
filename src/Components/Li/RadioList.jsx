@@ -22,11 +22,13 @@ const Radiolist = styled.li`
  padding: 15px 10px;
  border-radius: 10px 7px 7px 0;
  margin: 1rem 0;
+ cursor: pointer;
  svg {
   margin: auto 0;
   width: 30px;
  }
  h5{
+  font-family: 'Roboto Condensed', sans-serif;
   font-size:18px ;
  }
 
@@ -37,7 +39,8 @@ const Radiolist = styled.li`
 
   p{
    color: #b6b5b5;
-   font-weight: bold;
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 400;
   }
  }
 `;

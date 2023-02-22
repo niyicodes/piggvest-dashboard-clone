@@ -9,6 +9,7 @@ import RadioList from "../Components/Li/RadioList";
 import Started from "/assets/get_started_2.jpg";
 import Andriod from "/assets/andriod.png";
 import Ios from "/assets/ios.png";
+import { Link } from "react-router-dom";
 const Home = () => {
  return (
   <HomePage>
@@ -38,6 +39,7 @@ const Home = () => {
         balance={item.balance}
         bgColor={item.bgColor}
         colour={item.colour}
+        path={item.path}
        />
       );
      })}
@@ -94,8 +96,20 @@ const Home = () => {
       <div className="middle-second-right-bottom">
        <h6>DOWNLOAD THE MOBILE APP</h6>
        <div className="app">
-        <img src={Ios} alt="" />
-        <img src={Andriod} alt="" />
+        <Link
+         to="https://apps.apple.com/ng/app/piggyvest/id1263117994"
+         target="_blank"
+         rel="noopener noreferrer"
+        >
+         <img src={Ios} alt="" />
+        </Link>
+        <Link
+         to="https://play.google.com/store/apps/details?id=com.piggybankng.piggy"
+         target="_blank"
+         rel="noopener noreferrer"
+        >
+         <img src={Andriod} alt="" />
+        </Link>
        </div>
       </div>
      </div>
@@ -107,7 +121,7 @@ const Home = () => {
  );
 };
 const HomePage = styled.section`
- margin: 1rem 2rem 1rem 1rem;
+ padding: 15px;
  .top {
   &-first {
    display: flex;
@@ -115,19 +129,24 @@ const HomePage = styled.section`
    justify-content: space-between;
    margin-bottom: 2rem;
    h2 {
-    font-size: 50px;
+    font-size: 40px;
+    font-family: "Roboto Condensed", sans-serif;
    }
    p {
-    font-size: 25px;
+    font-size: 20px;
     color: #b1adad;
     font-weight: bold;
+    font-family: "Source Sans Pro", sans-serif;
    }
   }
   &-second {
    display: flex;
    justify-content: space-between;
    margin: 0 3rem 0 0;
-
+   p {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+   }
    svg {
     font-size: 30px;
     font-weight: bolder;
@@ -139,6 +158,7 @@ const HomePage = styled.section`
     border: none;
     border-radius: 10px 7px 7px 0;
     color: white;
+    font-family: "Source Sans Pro", sans-serif;
    }
   }
  }
@@ -162,6 +182,8 @@ const HomePage = styled.section`
    gap: 2rem;
 
    &-left {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
     width: 60%;
     &-top,
     &-bottom {
@@ -169,6 +191,8 @@ const HomePage = styled.section`
     }
    }
    &-right {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
     width: 35%;
     &-top {
      margin-top: 20px;
@@ -180,17 +204,21 @@ const HomePage = styled.section`
       overflow: hidden;
      }
     }
-    &-bottom{
-      .app{
-        display:flex;
-        gap: 1.5rem;
-        margin-top: 1rem;
-        img{
-          display: block;
-          width: 50%;
-          height: auto;
-        }
+    &-bottom {
+     .app {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      a {
+       text-decoration: none;
+       width: 50%;
+       img {
+        display: block;
+        width: 100%;
+        height: auto;
+       }
       }
+     }
     }
    }
   }

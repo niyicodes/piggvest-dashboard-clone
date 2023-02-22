@@ -8,6 +8,7 @@ import Profile from "./Pages/Profile";
 import Savings from "./Pages/Savings";
 import SideBar from "./Components/SideBar/SideBar";
 import "./App.css"
+import AllSavings from "./Pages/AllSavings";
 
 function App() {
  return (
@@ -15,6 +16,7 @@ function App() {
    <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/savings" element={<Savings />} />
+    <Route path="/savings/:name" element={<AllSavings />} />
     <Route path="/investify" element={<Investify />} />
     <Route path="/settings" element={<Profile />} />
     <Route path="/login" element={<SignIn />} />
