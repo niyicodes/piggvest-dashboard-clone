@@ -42,6 +42,9 @@ const HorizonCard = styled.div`
   color: #4a5568;
   font-size: .875rem;
  }
- 
+ .text-area{
+  display: flex;
+  flex-direction: column;
+ }
 `;
 export default HorizontalCard;

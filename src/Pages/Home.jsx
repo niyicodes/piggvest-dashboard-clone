@@ -223,5 +223,34 @@ const HomePage = styled.section`
    }
   }
  }
+ @media screen and (max-width: 926px) {
+  .top {
+   &-first {
+   }
+   &-second {
+    margin: 0;
+   }
+  }
+  .middle {
+   &-first {
+   }
+   &-second {
+    flex-direction: column;
+    gap: 1rem;
+    &-left {
+     width: 100%;
+
+     &-bottom {
+      margin-bottom: 1rem;
+     }
+    }
+    &-right {
+     width: 100%;
+    }
+   }
+  }
+  .bottom {
+  }
+ }
 `;
 export default Home;

@@ -47,7 +47,7 @@ const Savings = () => {
 };
 
 const SavingsPage = styled.section`
-  font-family: 'Roboto Condensed', sans-serif;
+ font-family: "Roboto Condensed", sans-serif;
  padding: 15px;
  .top {
   display: flex;
@@ -57,7 +57,7 @@ const SavingsPage = styled.section`
   font-weight: 700;
   &-text {
    h3 {
-     font-size: 35px;
+    font-size: 35px;
    }
    p {
     color: #b1b1b1;
@@ -82,19 +82,19 @@ const SavingsPage = styled.section`
    padding-left: 15px;
    small {
     padding-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
     color: #b1b1b1;
    }
    h4 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     color: rgb(13, 96, 216);
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 900;
    }
   }
   &-right {
-font-family: 'Source Sans Pro', sans-serif;
-font-weight: 400;
+   font-family: "Source Sans Pro", sans-serif;
+   font-weight: 400;
    width: 30%;
    height: 100%;
    figure {
@@ -114,27 +114,85 @@ font-weight: 400;
  .bottom {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
 
   .horizcard {
-    padding: 20px;
-   width: 350px;
+   padding: 25px;
+   width: 420px;
    height: 200px;
    display: flex;
    flex-direction: column;
+   border: none;
+   border-radius: 20px;
    gap: 1rem;
    align-items: left;
    .text-area {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.1rem;
+    margin-right: auto;
+    h5{
+      font-size: 20px;
+    }
+    h3{
+      font-size: 15px;
+    }
+    h4{
+      font-size: 20px;
+    }
    }
-   .icon{
-     align-self: flex-start;
-     svg{
-      font-size: 25px;
-     }
+   .icon {
+    align-self: flex-start;
+    svg {
+     font-size: 25px;
+    }
    }
   }
+ }
+ @media screen and (max-width: 926px){
+   .top{}
+   .middle{
+     flex-direction: column;
+     height: auto;
+     margin-bottom: .5rem;
+     &-left{
+       width: 100%;
+       padding:15px;
+     }
+     &-right{
+       width: 100%;
+       figure{
+         img{
+           padding-top: -10px;
+         }
+       }
+     }
+   }
+   .bottom{
+     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    place-items: center;
+    row-gap: 5px;
+     .horizcard{
+       width: 100%;
+       height: auto;
+       padding: 15px 13px;
+
+       .text-area{
+         gap: .7rem;
+
+         h5{
+           font-size: 18px;
+         }
+         h3{
+           font-size: 13px;
+         }
+         h4{
+           font-size: 18px;
+         }
+       }
+     }
+   }
  }
 `;
 export default Savings;

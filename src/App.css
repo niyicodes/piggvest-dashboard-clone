@@ -24,7 +24,6 @@ main {
  gap: 2.5rem;
  position: fixed;
  font-family: "Labrada", serif;
- 
 }
 .top_section {
  display: flex;
@@ -78,4 +77,66 @@ h3 {
  margin-top: auto;
  padding-bottom: 20px;
  align-items: center;
+}
+
+@media screen and (max-width: 926px) {
+ .container {
+  flex-direction: column-reverse;
+  position: relative;
+ }
+ main {
+  padding: 10px;
+ }
+ .sidebar {
+  background-color: rgb(237, 237, 237);
+  height: 10%;
+  width: 100vw !important;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 15px;
+ }
+
+ .top_section {
+  display: none;
+ }
+
+ .navs {
+  display: flex;
+  gap: 2.5rem;
+  margin: auto;
+ }
+
+ .link {
+  flex-direction: column;
+  color: rgb(177, 177, 177);
+  padding: 10px;
+  gap: 2px;
+ }
+
+ .link h3{
+     display: block;
+     color: black;
+ }
+
+ .active .icon {
+  color: #062863;
+ }
+ .active h3 {
+  color: black;
+ }
+
+ .icon {
+ }
+
+ .active {
+  margin-left: 0;
+ }
+
+ .logout {
+  display: none;
+ }
 }

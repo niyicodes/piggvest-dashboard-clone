@@ -10,3 +10,5 @@ button{
 
 font-family: 'Roboto Condensed', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;
+@media screen and (max-height: 844px){}
+@media screen and (max-width: 1024px){}
