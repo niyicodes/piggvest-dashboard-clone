@@ -89,7 +89,7 @@ h3 {
  }
  .sidebar {
   background-color: rgb(237, 237, 237);
-  height: 10%;
+  height: 80px;
   width: 100vw !important;
   flex-direction: row;
   position: fixed;
