@@ -7,23 +7,15 @@ import horizontalCardDetails from "../Components/Card/horizontalcardDetails";
 import { At1, Lock, Thumb, Circle } from "../Components/Icons/Icons";
 import RadioList from "../Components/Li/RadioList";
 import Started from "/assets/get_started_2.jpg";
-import Andriod from "/assets/andriod.png";
-import Ios from "/assets/ios.png";
 import { Link } from "react-router-dom";
+import TopHeader from "../Components/Heading/TopHeader";
+import GetApp from "../Components/APPS/GetApp";
 
 const Home = () => {
  return (
   <HomePage>
    <div className="top">
-    <div className="top-first">
-     <div>
-      <h2>NAME,</h2>
-      <p>wash your hands, it's lunch time !</p>
-     </div>
-     <div>
-      <img src="" alt="" />
-     </div>
-    </div>
+    <TopHeader title="NAME" subtitle={"wash your hands, it's lunch time !"} img/>
     <div className="top-second">
      <BiRefresh />
      <Button name="+ QUICK SAVE" />
@@ -96,22 +88,7 @@ const Home = () => {
       </div>
       <div className="middle-second-right-bottom">
        <h6>DOWNLOAD THE MOBILE APP</h6>
-       <div className="app">
-        <Link
-         to="https://apps.apple.com/ng/app/piggyvest/id1263117994"
-         target="_blank"
-         rel="noopener noreferrer"
-        >
-         <img src={Ios} alt="" />
-        </Link>
-        <Link
-         to="https://play.google.com/store/apps/details?id=com.piggybankng.piggy"
-         target="_blank"
-         rel="noopener noreferrer"
-        >
-         <img src={Andriod} alt="" />
-        </Link>
-       </div>
+       <GetApp />
       </div>
      </div>
     </div>
@@ -124,21 +101,11 @@ const Home = () => {
 };
 const HomePage = styled.section`
  .top {
-  &-first {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   margin-bottom: 2rem;
-   h2 {
-    font-size: 40px;
-    font-family: "Roboto Condensed", sans-serif;
-   }
-   p {
-    font-size: 20px;
-    color: #b1adad;
-    font-weight: bold;
-    font-family: "Source Sans Pro", sans-serif;
-   }
+  h3{
+   font-family: 'Roboto Condensed', sans-serif;
+  }
+  p{
+   font-family: 'Source Sans Pro', sans-serif;
   }
   &-second {
    display: flex;
@@ -206,20 +173,7 @@ const HomePage = styled.section`
      }
     }
     &-bottom {
-     .app {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1rem;
-      a {
-       text-decoration: none;
-       width: 50%;
-       img {
-        display: block;
-        width: 100%;
-        height: auto;
-       }
-      }
-     }
+     
     }
    }
   }
@@ -270,11 +224,6 @@ const HomePage = styled.section`
     }
     &-right {
      width: 100%;
-     &-bottom{
-      .app{
-       flex-direction: row;
-      }
-     }
     }
    }
   }

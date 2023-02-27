@@ -9,9 +9,7 @@ import Savings from "./Pages/Savings";
 import SideBar from "./Components/SideBar/SideBar";
 import "./App.css";
 import AllSavings from "./Pages/AllSavings";
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "./Feature/User/userSlice";
-import { auth } from "./Firebase/firebase";
+
 
 function App() {
  const [isOpen, setIsOpen] = useState(false);

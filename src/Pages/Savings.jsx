@@ -2,18 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import HorizontalCard from "../Components/Card/HorizontalCard";
 import savingDetails from "../Components/Card/savingDetails";
+import TopHeader from "../Components/Heading/TopHeader";
 import Started from "/assets/get_started_2.jpg";
 
 const Savings = () => {
  return (
   <SavingsPage>
-   <div className="top">
-    <div className="top-text">
-     <h3>Savings</h3>
-     <p>Let's see how well you're doing.</p>
-    </div>
-    <div className="top-img"></div>
-   </div>
+   <TopHeader title={"Savings"} subtitle="Let's see how well you're doing." img/>
    <div className="middle">
     <div className="middle-left">
      <small>Total Balance</small>
@@ -48,22 +43,6 @@ const Savings = () => {
 
 const SavingsPage = styled.section`
  font-family: "Roboto Condensed", sans-serif;
- .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-  &-text {
-   h3 {
-    font-size: 35px;
-   }
-   p {
-    color: #b1b1b1;
-    font-size: 15px;
-   }
-  }
- }
  .middle {
   display: flex;
   justify-content: space-between;
