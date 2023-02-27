@@ -23,13 +23,14 @@ const HorizonCard = styled.div`
  gap: 2rem;
  width: 280px;
  height: 150px;
- margin: 1rem;
+ margin: .7rem .7rem 0 0;
  border: 0.5px solid grey;
  border-radius: 9px 9px 0px 9px;
  outline: none;
  font-family: 'Roboto Condensed', sans-serif;
  font-weight: 400;
  color: #c6c6c6;
+ cursor: pointer;
  p {
   font-size: 18px;
   padding-bottom: 15px;

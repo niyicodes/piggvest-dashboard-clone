@@ -48,7 +48,6 @@ const Savings = () => {
 
 const SavingsPage = styled.section`
  font-family: "Roboto Condensed", sans-serif;
- padding: 15px;
  .top {
   display: flex;
   justify-content: space-between;
@@ -100,13 +99,14 @@ const SavingsPage = styled.section`
    figure {
     width: 100%;
     height: auto;
-
+    margin-right: auto;
     img {
      width: 100%;
      height: 200px;
      object-fit: contain;
      border-radius: 10px;
      overflow: hidden;
+     float: left;
     }
    }
   }
@@ -115,6 +115,8 @@ const SavingsPage = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
+  place-items: center;
+  margin: 0 auto;
 
   .horizcard {
    padding: 25px;
@@ -131,14 +133,14 @@ const SavingsPage = styled.section`
     flex-direction: column;
     gap: 1.1rem;
     margin-right: auto;
-    h5{
-      font-size: 20px;
+    h5 {
+     font-size: 20px;
     }
-    h3{
-      font-size: 15px;
+    h3 {
+     font-size: 15px;
     }
-    h4{
-      font-size: 20px;
+    h4 {
+     font-size: 20px;
     }
    }
    .icon {
@@ -149,48 +151,56 @@ const SavingsPage = styled.section`
    }
   }
  }
- @media screen and (max-width: 926px){
-   .top{}
-   .middle{
-     flex-direction: column;
-     height: auto;
-     margin-bottom: .5rem;
-     &-left{
-       width: 100%;
-       padding:15px;
-     }
-     &-right{
-       width: 100%;
-       figure{
-         img{
-           padding-top: -10px;
-         }
-       }
-     }
+ @media screen and (max-width: 926px) {
+  .top {
+  }
+  .middle {
+   flex-direction: column;
+   height: auto;
+   margin-bottom: 0.5rem;
+   &-left {
+    width: 100%;
+    padding: 15px;
    }
+   &-right {
+    width: 100%;
+    figure {
+     img {
+      padding-top: -10px;
+     }
+    }
+   }
+  }
+  .bottom {
+   grid-template-columns: repeat(2, auto);
+   gap: 10px;
+   margin:0 1rem;
+   row-gap: 10px;
+   .horizcard {
+    width: 100%;
+    height: auto;
+    padding: 15px 13px;
+
+    .text-area {
+     gap: 0.7rem;
+
+     h5 {
+      font-size: 18px;
+     }
+     h3 {
+      font-size: 13px;
+     }
+     h4 {
+      font-size: 18px;
+     }
+    }
+   }
+  }
+ }
+ @media screen and (min-width: 1024px) {
    .bottom{
-     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    place-items: center;
-    row-gap: 5px;
      .horizcard{
-       width: 100%;
-       height: auto;
-       padding: 15px 13px;
-
-       .text-area{
-         gap: .7rem;
-
-         h5{
-           font-size: 18px;
-         }
-         h3{
-           font-size: 13px;
-         }
-         h4{
-           font-size: 18px;
-         }
-       }
+       width: auto;
      }
    }
  }

@@ -3,140 +3,34 @@
  padding: 0;
  text-decoration: none;
 }
-.container {
+
+
+.app {
  display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ gap: 4rem;
+ width: 100%;
  overflow-x: hidden;
- background-color: white;
- width: 100%;
-}
-main {
- width: 100%;
- padding: 30px 1.2rem 30px 5rem;
-}
-.sidebar {
- background: #062863;
- color: #fff;
- height: 100%;
- width: 200px;
- transition: all 0.5s;
- display: flex;
- flex-direction: column;
- gap: 2.5rem;
- position: fixed;
- font-family: "Labrada", serif;
-}
-.top_section {
- display: flex;
- align-items: center;
- gap: 1rem;
- padding: 20px 15px;
-}
-.logo {
- width: 130px;
-}
-.bars {
- display: flex;
- font-size: 25px;
- margin-left: 50px;
-}
-.link {
- display: flex;
- color: #fff;
- padding: 1.2rem 15px;
- gap: 15px;
- transition: all 0.5s;
- /* font-size: 40px; */
-}
-/* .link:hover{
-    background:lightskyblue;
-    color: #000;
-    transition: all 0.5s;
-    margin-left: 15px;
-} */
-.active {
- margin-left: 15px;
-}
-h3 {
- font-size: 25px;
-}
-.active h3 {
- background: white;
- /* font-size: 15px; */
- padding: 5px 15px;
- color: #3463b6;
- border-radius: 8px 8px 8px 0px;
-}
-.icon {
- font-size: 28px;
 }
 
-.logout {
- display: flex;
- justify-content: center;
- font-size: 30px;
- margin-top: auto;
- padding-bottom: 20px;
- align-items: center;
+
+.main {
+ margin: 2rem 0 3rem 4rem;
+ padding: 15px 15px 15px 30px;
+ width: 95%;
 }
+
 
 @media screen and (max-width: 926px) {
- .container {
+ .app {
   flex-direction: column-reverse;
-  position: relative;
+  gap: 3rem;
+  justify-content: space-between !important;
  }
- main {
+ .main {
+  margin: 2rem auto 4rem;
   padding: 10px;
- }
- .sidebar {
-  background-color: rgb(237, 237, 237);
-  height: 80px;
-  width: 100vw !important;
-  flex-direction: row;
-  position: fixed;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 15px;
- }
-
- .top_section {
-  display: none;
- }
-
- .navs {
-  display: flex;
-  gap: 2.5rem;
-  margin: auto;
- }
-
- .link {
-  flex-direction: column;
-  color: rgb(177, 177, 177);
-  padding: 10px;
-  gap: 2px;
- }
-
- .link h3{
-     display: block;
-     color: black;
- }
-
- .active .icon {
-  color: #062863;
- }
- .active h3 {
-  color: black;
- }
-
- .icon {
- }
-
- .active {
-  margin-left: 0;
- }
-
- .logout {
-  display: none;
+  padding-bottom: 30px;
  }
 }

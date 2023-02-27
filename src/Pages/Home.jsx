@@ -10,6 +10,7 @@ import Started from "/assets/get_started_2.jpg";
 import Andriod from "/assets/andriod.png";
 import Ios from "/assets/ios.png";
 import { Link } from "react-router-dom";
+
 const Home = () => {
  return (
   <HomePage>
@@ -115,13 +116,13 @@ const Home = () => {
      </div>
     </div>
    </div>
+   {/* bottom */}
    <div></div>
    <div></div>
   </HomePage>
  );
 };
 const HomePage = styled.section`
- padding: 15px;
  .top {
   &-first {
    display: flex;
@@ -226,6 +227,12 @@ const HomePage = styled.section`
  @media screen and (max-width: 926px) {
   .top {
    &-first {
+    h2 {
+     font-size: 30px;
+    }
+    p {
+     font-size: 15px;
+    }
    }
    &-second {
     margin: 0;
@@ -233,10 +240,27 @@ const HomePage = styled.section`
   }
   .middle {
    &-first {
+    .horizcard {
+     width: 230px;
+     height: 100px;
+     gap: 1rem;
+    }
    }
    &-second {
     flex-direction: column;
     gap: 1rem;
+
+    li {
+     padding: 10px;
+
+     h5 {
+      font-size: 16px;
+     }
+
+     .text {
+      gap: 5px;
+     }
+    }
     &-left {
      width: 100%;
 
@@ -246,6 +270,11 @@ const HomePage = styled.section`
     }
     &-right {
      width: 100%;
+     &-bottom{
+      .app{
+       flex-direction: row;
+      }
+     }
     }
    }
   }

@@ -1,14 +1,42 @@
-import React from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { registerWithEmailAndPassword } from "../Firebase/firebase";
 import piggywhite from "/assets/piggywhite.png";
 
 const SignUp = () => {
+ const [formDetails, setFormDetails] = useState({
+  email: "",
+  password: "",
+  phone: "",
+  referer: "",
+  name: "",
+  about: "",
+ });
+ const register = () => {
+  if (!formDetails.name) alert("Please enter name");
+  registerWithEmailAndPassword(formDetails);
+ };
+ const handleChange = (event) => {
+  const { value, name } = event.target;
+  setFormDetails((prevData) => {
+   return {
+    ...prevData,
+    [name]: value,
+   };
+  });
+ };
+
  return (
   <Register className="login">
    <div className="mainarea">
     <div className="img">
-     <Link to="https://niyipiggyvestclone.netlify.app/" target="_blank" rel="noopener noreferrer">
+     <Link
+      to="https://niyipiggyvestclone.netlify.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
       <img src={piggywhite} alt="" />
      </Link>
     </div>
@@ -19,37 +47,80 @@ const SignUp = () => {
      </div>
      <div className="input-area">
       <label htmlFor="text">Full Name</label>
-      <input type="text" name="name" id="name" placeholder="Full Name"/>
+      <input
+       type="text"
+       name="name"
+       id="name"
+       placeholder="Full Name"
+       value={formDetails.name}
+       onChange={handleChange}
+      />
      </div>
      <div className="input-area">
       <label htmlFor="email">Email Address</label>
-      <input type="email" name="email" id="email" placeholder="Email Address"/>
+      <input
+       type="email"
+       name="email"
+       id="email"
+       placeholder="Email Address"
+       value={formDetails.email}
+       onChange={handleChange}
+      />
      </div>
      <div className="input-area">
       <label htmlFor="phone">Phone Number</label>
-      <input type="tel" name="phone" id="phone" placeholder="Phone Number"/>
+      <input
+       type="tel"
+       name="phone"
+       id="phone"
+       placeholder="Phone Number"
+       value={formDetails.phone}
+       onChange={handleChange}
+      />
      </div>
      <div className="input-area">
       <label htmlFor="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Password"/>
+      <input
+       type="password"
+       name="password"
+       id="password"
+       placeholder="Password"
+       value={formDetails.password}
+       onChange={handleChange}
+      />
      </div>
      <div className="input-area">
-      <label htmlFor="promo-code">Referrer Phone or Promo Code (Optional)</label>
-      <input type="text" name="promo-code" id="promo-code" placeholder="Referrer Phone or Promo Code"/>
+      <label htmlFor="promo-code">
+       Referrer Phone or Promo Code (Optional)
+      </label>
+      <input
+       type="text"
+       name="promo-code"
+       id="promo-code"
+       placeholder="Referrer Phone or Promo Code"
+       value={formDetails.referer}
+       onChange={handleChange}
+      />
      </div>
      <div className="input-area">
       <label htmlFor="hear">How Did You Hear About Us? (Optional)</label>
-      <select name="options" id="optons" placeholder="Click to select">
-        <option value="post">Facebook</option>
-        <option value="post">Twitter</option>
-        <option value="referral">Friend/Family/Coworker</option>
-        <option value="post">Blog</option>
-        <option value="post">Local Newspaper</option>
-        <option value="post">At an Event</option>
+      <select
+       name="options"
+       id="optons"
+       placeholder="Click to select"
+       value={formDetails.about}
+       onChange={handleChange}
+      >
+       <option value="post">Facebook</option>
+       <option value="post">Twitter</option>
+       <option value="referral">Friend/Family/Coworker</option>
+       <option value="post">Blog</option>
+       <option value="post">Local Newspaper</option>
+       <option value="post">At an Event</option>
       </select>
      </div>
 
-     <input type="submit" value="CREATE ACCOUNT" />
+     <input type="submit" value="CREATE ACCOUNT" onClick={register} />
     </form>
     <div className="below">
      <Link to="/login">
@@ -74,7 +145,7 @@ const Register = styled.main`
  align-items: center;
  font-family: "Inter", sans-serif !important;
  font-weight: 500;
-  padding: 3rem 0;
+ padding: 3rem 0;
  .mainarea {
   .img {
    text-align: center;
@@ -111,7 +182,8 @@ const Register = styled.main`
      padding-bottom: 7px;
      font-weight: 700;
     }
-    input, select {
+    input,
+    select {
      padding: 15px;
      font-size: 1.1rem;
      border: none;
@@ -123,7 +195,7 @@ const Register = styled.main`
    input[type="submit"] {
     width: 100%;
     padding: 16px;
-    background-color: #083E9E;
+    background-color: #083e9e;
     color: white;
     border: none;
     outline: none;
@@ -155,19 +227,19 @@ const Register = styled.main`
  }
 
  @media (max-width: 428px) {
-  
-  .form-area{
-    width: 100%!important;
-    margin:2rem auto!important;
+   margin: 0 1rem;
+  .form-area {
+   width: 100% !important;
+   margin: 2rem auto !important;
 
-    .top-text{
-      p{
-        padding: 10px 0;;
-      }
+   .top-text {
+    p {
+     padding: 10px 0;
     }
+   }
   }
-  .below{
-    font-size: 13px;
+  .below {
+   font-size: 13px;
   }
  }
 `;

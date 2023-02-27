@@ -1,14 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import piggywhite from "/assets/piggywhite.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, logInWithEmailAndPassword } from "../Firebase/firebase";
+
 
 const SignIn = () => {
+ const [email, setEmail] = useState("")
+ const [password, setPassword] = useState("")
+ const [user, loading, error] = useAuthState(auth);
+
+ const navigate = useNavigate();
+
+ useEffect(() => {
+  if (loading) {
+   // maybe trigger a loading screen
+   return;
+  }
+  if (user) navigate("/");
+ }, [user, loading]);
+
+ console.log(user)
+ 
  return (
   <Login className="login">
    <div className="mainarea">
     <div className="img">
-     <Link to="https://niyipiggyvestclone.netlify.app/" target="_blank" rel="noopener noreferrer">
+     <Link
+      to="https://niyipiggyvestclone.netlify.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
       <img src={piggywhite} alt="" />
      </Link>
     </div>
@@ -19,14 +42,14 @@ const SignIn = () => {
      </div>
      <div className="input-area">
       <label htmlFor="text">Email or Phone Number</label>
-      <input type="text" name="" id="" />
+      <input type="text" name="" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
      </div>
      <div className="input-area">
       <label htmlFor="password">Password</label>
-      <input type="password" name="" id="" />
+      <input type="password" name="" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
      </div>
 
-     <input type="submit" value="LOG IN" />
+     <input type="submit" value="LOG IN" onClick={() => logInWithEmailAndPassword(email, password)}/>
     </form>
     <div className="below">
      <Link to="/register">
