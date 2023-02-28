@@ -12,11 +12,12 @@ import AllSavings from "./Pages/AllSavings";
 import Explore from "./Components/Explore/Explore";
 import Completed from "./Components/Completed/Completed";
 import MyInvestments from "./Components/MyInvestments/MyInvestments";
+import investments from "./Components/Invest/investments";
 
 function App() {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);
- const [investment, setInvestment] = useState(true);
+ const [investment, setInvestment] = useState(investments);
  return (
   <div className="app">
    <SideBar />
@@ -25,8 +26,8 @@ function App() {
      <Route path="/" element={<Home />} />
      <Route path="/savings" element={<Savings />} />
      <Route path="/savings/:name" element={<AllSavings />} />
-     <Route path="/investify" element={<Investify investment={investment} />}>
-      <Route path="" element={<MyInvestments />} />
+     <Route path="/investify" element={<Investify />}>
+      <Route path="/investify" element={<MyInvestments />} />
       <Route path="explore" element={<Explore />} />
       <Route path="completed" element={<Completed />} />
      </Route>

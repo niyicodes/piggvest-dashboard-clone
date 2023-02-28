@@ -1,12 +1,12 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import Button from "../Components/Button/Button";
 import TopHeader from "../Components/Heading/TopHeader";
+import { More } from "../Components/Icons/Icons";
 import Nav from "../Components/Nav/Nav";
-import InvestNow from "../Components/Start/InvestNow";
+import invest from "/assets/invest.png"
 
-const Investify = ({ investment }) => {
+const Investify = () => {
  return (
   <Invest>
    <TopHeader title={"Investify"} img />
@@ -18,16 +18,12 @@ const Investify = ({ investment }) => {
        <h3>₦0.00</h3>
       </div>
       <div className="btm">
-       <p>Learn More</p>
+       <p><span>{More}</span> Learn More</p>
       </div>
      </div>
      <div className="left-btm">
       <Nav />
-      {investment ? (
-       <InvestNow />
-      ) : (
-       <Outlet />
-      )}
+      <Outlet />
      </div>
     </aside>
     <aside className="right">
@@ -36,10 +32,10 @@ const Investify = ({ investment }) => {
       <h4>Up to 25%</h4>
       <small>Per Annum</small>
      </div>
-     <div>
+     <div className="bottom">
       <h6>INVESTIFY</h6>
       <figure>
-       <img src="" alt="" />
+       <img src={invest} alt="invest" />
       </figure>
      </div>
     </aside>
@@ -58,7 +54,7 @@ const Invest = styled.main`
    width: 70%;
 
    &-top {
-    border: 2px solid gray;
+    border: 1px solid gray;
     margin-bottom: 2rem;
     border-radius: 10px 0px 15px;
 
@@ -76,16 +72,24 @@ const Invest = styled.main`
     }
     .btm {
      text-align: center;
-     border-top: 2px solid gray;
+     border-top: 1px solid gray;
      border-width: 100%;
      p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       padding: 10px;
+      font-size: 20px;
+      span{
+       display:flex;
+      }
      }
     }
    }
    &-btm {
     margin-top: 2rem;
-    border: 2px solid gray;
+    border: 1px solid gray;
     border-radius: 0 10px 15px;
    }
   }
@@ -110,7 +114,33 @@ const Invest = styled.main`
      font-size: 15px;
     }
    }
+   .bottom{
+    h6{
+     font-size: 20px;
+     padding-bottom: 10px;
+    }
+    figure{
+     width: 100%;
+     img{
+      width: 100%;
+     }
+    }
+   }
   }
  }
+@media screen and (max-width: 844px){
+ 
+ .invest{
+  flex-direction: column;
+
+  .left{
+   width: 100%;
+  }
+  .right{
+   width: 100%;
+  }
+ }
+}
+
 `;
 export default Investify;

@@ -7,7 +7,7 @@ const Nav = () => {
  return (
   <Navbar>
    <ul>
-    <NavLink to="" activeClassName="active">
+    <NavLink to="/investify" activeClassName="active">
      <span>{Target}</span> My investments
     </NavLink>
     <NavLink to="explore" activeClassName="active">
@@ -54,6 +54,14 @@ const Navbar = styled.nav`
     svg {
      color: #7913e5 !important;
     }
+   }
+  }
+ }
+ @media screen and (max-width: 844px){
+  margin-left: 1rem;
+  ul{
+   a{
+    font-size: 12px;
    }
   }
  }

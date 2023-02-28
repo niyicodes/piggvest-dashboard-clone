@@ -34,7 +34,7 @@ const INVESTNOW = styled.div`
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  width: 30%;
+  /* width: 30%; */
   margin: 1rem auto;
 
   button {
