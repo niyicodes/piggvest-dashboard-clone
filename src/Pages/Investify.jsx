@@ -1,10 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Components/Button/Button";
 import TopHeader from "../Components/Heading/TopHeader";
+import Nav from "../Components/Nav/Nav";
+import InvestNow from "../Components/Start/InvestNow";
 
-const Investify = () => {
+const Investify = ({ investment }) => {
  return (
   <Invest>
    <TopHeader title={"Investify"} img />
@@ -20,39 +22,12 @@ const Investify = () => {
       </div>
      </div>
      <div className="left-btm">
-      <nav>
-       <ul>
-        <li>
-         <NavLink to="/investify" activeClassName="active">
-          My investments
-         </NavLink>
-        </li>
-        <li>
-         <NavLink to="investify/explore" activeClassName="active">
-          Explore
-         </NavLink>
-        </li>
-        <li>
-         <NavLink to="investify/completed" activeClassName="active">
-          Completed
-         </NavLink>
-        </li>
-       </ul>
-      </nav>
-      <div className="area">
-       <h4>Start Investing</h4>
-       <p>
-        Start investing in verified opportunities. Let's help you get started.
-       </p>
-       <div className="btns">
-        <div className="btn-block">
-         <Button name={"INVEST NOW"} className="btn btn-block" />
-        </div>
-        <div className="btn-transparent">
-         <Button name={"LEARN MORE"} />
-        </div>
-       </div>
-      </div>
+      <Nav />
+      {investment ? (
+       <InvestNow />
+      ) : (
+       <Outlet />
+      )}
      </div>
     </aside>
     <aside className="right">
@@ -77,7 +52,7 @@ const Invest = styled.main`
   display: flex;
   gap: 2rem;
   width: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 
   .left {
    width: 70%;
@@ -90,11 +65,11 @@ const Invest = styled.main`
     .tp {
      padding: 15px 20px;
      h6 {
-      font-size: 10px;
+      font-size: 20px;
       padding-bottom: 10px;
      }
      h3 {
-      font-size: 30px;
+      font-size: 40px;
       padding-bottom: 5px;
       color: #7913e5;
      }
@@ -112,67 +87,6 @@ const Invest = styled.main`
     margin-top: 2rem;
     border: 2px solid gray;
     border-radius: 0 10px 15px;
-
-    nav {
-     margin-bottom: 1rem;
-     border-bottom: 2px solid gray;
-     padding-top: 10px;
-     ul {
-      display: flex;
-
-      li {
-       display: flex;
-       padding-right: 10px;
-       a {
-        text-decoration: none;
-       }
-       a.active {
-        padding-bottom: 7px;
-        border-bottom: 3px solid #7913e5;
-       }
-      }
-     }
-    }
-    .area {
-     padding: 15px 20px;
-     text-align: center;
-     h4 {
-      font-size: 30px;
-      color: #7913e5;
-     }
-     p {
-      font-size: 18px;
-     }
-     .btns {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      justify-content: center;
-      width: 30%;
-      margin: 1rem auto;
-
-      button {
-       padding: 10px 25px;
-       border-radius: 0 8px;
-       background-color: #7913e5;
-       outline: none;
-       border: none;
-       color: white;
-
-       &:hover {
-        transform: scale(1.2);
-        transition: all 0.6s ease-in-out;
-       }
-      }
-      .btn-transparent {
-       button {
-        background-color: transparent !important;
-        color: #7913e5;
-        border: 2px solid #7913e5;
-       }
-      }
-     }
-    }
    }
   }
   .right {
@@ -186,11 +100,14 @@ const Invest = styled.main`
     margin-bottom: 2.5rem;
     border-radius: 10px 0px 15px;
     p {
-     font-size: 10px;
+     font-size: 15px;
     }
     h4 {
-     font-size: 25px;
+     font-size: 35px;
      color: #7913e5;
+    }
+    small {
+     font-size: 15px;
     }
    }
   }
