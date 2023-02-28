@@ -13,6 +13,7 @@ import Explore from "./Components/Explore/Explore";
 import Completed from "./Components/Completed/Completed";
 import MyInvestments from "./Components/MyInvestments/MyInvestments";
 
+
 function App() {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);

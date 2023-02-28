@@ -18,4 +18,4 @@ export const Circle = <BsCircle style={{ color: "#0D60D8" }} />;
 export const Target = <FiTarget style={{ color: "#10B259" }} />;
 export const More = <AiOutlineInfoCircle />
 export const Explore =<MdOutlineExplore />
-export const Done =<IoCheckmarkDoneCircleOutline />
+export const Done = <IoCheckmarkDoneCircleOutline />

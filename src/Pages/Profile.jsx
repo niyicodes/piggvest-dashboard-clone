@@ -1,9 +1,49 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+import HorizontalCard from "../Components/Card/HorizontalCard";
+import TopHeader from "../Components/Heading/TopHeader";
+import { Link } from "react-router-dom";
+import ProfileCard from "../Components/Card/ProfileCard";
 
 const Profile = () => {
+  const pocketImgLink = "https://storage.googleapis.com/piggybankservice.appspot.com/statics/connect-Pocket.jpg"
+  
   return (
-    <div>Profile</div>
-  )
-}
+    <Account>
+      {/* Name coming from backend. consume */}
+      <TopHeader title={"My Account"} subtitle={"Name"} />
+      <section className="account">
+        <div className="div__left">
+          <Link to={'/'}> <img src={pocketImgLink} alt="" className="div__left-img" /> </Link>
+          <ProfileCard />
+        </div>
+        <div className="div__right"></div>
+      </section>
+    </Account>
+  );
+};
 
-export default Profile
+const Account = styled.main`
+section{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .div__left{
+    flex: 4;
+
+    &-img{
+      width: 303px;
+      height: 114px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+  }
+  .div__right{
+    flex: 8;
+  }
+}
+`;
+
+export default Profile;
