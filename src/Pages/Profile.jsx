@@ -101,6 +101,13 @@ const Account = styled.main`
     display: flex;
     justify-content: space-between;
 
+    @media screen (max-width: 1024px){
+      .account{
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+      }
+    }
+
     .div__left {
       flex: 4;
 
@@ -169,7 +176,7 @@ const Account = styled.main`
     }
 
     .right__bottom aside2{
-      
+
     }
     .right__footer{
       display: flex;
