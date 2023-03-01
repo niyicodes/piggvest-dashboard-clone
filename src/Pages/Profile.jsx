@@ -7,7 +7,7 @@ import cardArray from "../Components/Card/CardArray";
 import { HiOutlineCamera } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import AccountDetails from "../Components/Card/AccountDetails";
-import {TbCurrencyNaira} from 'react-icons/tb'
+import { TbCurrencyNaira } from "react-icons/tb";
 import ToggleSwitch from "../Components/Toggle/ToggleSwitch";
 
 const Profile = () => {
@@ -18,7 +18,15 @@ const Profile = () => {
   const profileImage =
     "https://storage.googleapis.com/piggybankservice.appspot.com/agent_pics/logo8820da29ff.jpeg";
 
-  const naira = <TbCurrencyNaira />
+  const naira = <TbCurrencyNaira />;
+  
+  const logState = (state) => {
+    console.log("Toggled:", state);
+  };
+  
+  
+   
+
   return (
     <Account>
       {/* Name coming from backend. consume */}
@@ -62,33 +70,31 @@ const Profile = () => {
               <AccountDetails
                 title={"0123456789"}
                 subtitle={"Flex number by Wema"}
-                path={'/'}
+                path={"/"}
               />
               <AccountDetails
                 title={"#BlueBlacYello"}
                 subtitle={"Pigglink ID"}
-                path={'/'}
+                path={"/"}
               />
             </aside>
             <aside className="aside2">
               <AccountDetails
                 title={"0"}
                 subtitle={"Piggy Points"}
-                path={'/'}
+                path={"/"}
               />
               <AccountDetails
-                title={ `${naira}` + '0'}
+                title={`${naira}` + "0"}
                 subtitle={"Referral Earnings"}
-                path={'/'}
+                path={"/"}
               />
             </aside>
           </div>
           <footer className="right__footer">
-            <p className="right__footer">
-              Show Dashboard Balance
-            </p>
-            <div className="spacer"/>
-            <ToggleSwitch />
+            <p className="right__footer">Show Dashboard Balance</p>
+            <div className="spacer" />
+            <ToggleSwitch toggled={true} onClick={logState} />
           </footer>
         </section>
       </main>
@@ -99,14 +105,8 @@ const Profile = () => {
 const Account = styled.main`
   .account {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-
-    @media screen (max-width: 1024px){
-      .account{
-        flex-direction: column;
-        flex-wrap: wrap-reverse;
-      }
-    }
 
     .div__left {
       flex: 4;
@@ -168,29 +168,39 @@ const Account = styled.main`
         display: none;
       }
     }
-    .right__bottom{
+    .right__bottom {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
     }
 
-    .right__bottom aside2{
-
+    .right__bottom aside2 {
     }
-    .right__footer{
+    .right__footer {
       display: flex;
       justify-content: space-between !important;
       align-items: flex-start;
+      padding: 20px;
     }
-    .right__footer p{
+    .right__footer p {
+      flex: 6;
       font-size: 23px;
       font-weight: bold;
     }
-    .right__footer spacer{
+    .right__footer spacer {
       flex: 1;
     }
+  }
+  @media screen and (max-width: 1024px) {
+    .account {
+      flex-direction: column-reverse;
+    }
+    .account .div__right {
+      margin-left: 0;
+    }
     
+
   }
 `;
 

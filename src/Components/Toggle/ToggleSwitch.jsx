@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
-import ReactSwitch from 'react-switch';
+import { useState } from "react";
 
-function ToggleSwitch() {
-  const [checked, setChecked] = useState(true);
+import "./toggleSwitch.css";
 
-  const handleChange = val => {
-    setChecked(val)
-  }
+export default function ToggleSwitch({ toggled, onClick }) {
+  const [isToggled, toggle] = useState(toggled);
+
+  const callback = () => {
+    toggle(!isToggled);
+    onClick(!isToggled);
+  };
 
   return (
-    <div className="app" style={{textAlign: "right"}}>
-      <ReactSwitch
-        checked={checked}
-        onChange={handleChange}
-      />
-    </div>
+    <label>
+      <input type="checkbox" defaultChecked={isToggled} onClick={callback} />
+      <span></span>
+    </label>
   );
 }
-
-export default ToggleSwitch;
