@@ -26,7 +26,7 @@ const savingDetails = [
   balance: "₦1,000,000",
   bgColor: "rgba(34,149,242, 0.28)",
   colour: "#2295F2",
-  path: "/savings",
+  path: "/savings/safelock",
  },
  {
   icon: Target,
@@ -35,7 +35,7 @@ const savingDetails = [
   balance: "₦1,000,000",
   bgColor: "rgba(239, 252, 245,1)",
   colour: "#10B259",
-  path: "/savings",
+  path: "/savings/target",
  },
  {
   icon: Dollar,

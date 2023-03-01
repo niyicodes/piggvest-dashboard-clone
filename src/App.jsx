@@ -13,7 +13,10 @@ import Explore from "./Components/Explore/Explore";
 import Completed from "./Components/Completed/Completed";
 import MyInvestments from "./Components/MyInvestments/MyInvestments";
 import investments from "./Components/Invest/investments";
-
+import Piggybank from "./Pages/Piggybank"
+import Safelock from "./Pages/Safelock"
+import Targets from "./Pages/Targets"
+import FlexNaira from "./Pages/FlexNaira"
 function App() {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);
@@ -25,7 +28,12 @@ function App() {
     <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/savings" element={<Savings />} />
-     <Route path="/savings/:name" element={<AllSavings />} />
+     <Route path="/savings" element={<AllSavings />} >
+     <Route path="piggy" element={<Piggybank />} />
+     <Route path="safelock" element={<Safelock />} />
+     <Route path="target" element={<Targets />} />
+     <Route path="flex" element={<FlexNaira />} />
+     </Route>
      <Route path="/investify" element={<Investify />}>
       <Route path="/investify" element={<MyInvestments />} />
       <Route path="explore" element={<Explore />} />
