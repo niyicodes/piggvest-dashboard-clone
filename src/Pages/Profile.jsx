@@ -4,16 +4,21 @@ import TopHeader from "../Components/Heading/TopHeader";
 import { Link } from "react-router-dom";
 import ProfileCard from "../Components/Card/ProfileCard";
 import cardArray from "../Components/Card/CardArray";
-import { HiOutlineCamera } from "react-icons/hi";;
+import { HiOutlineCamera } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import AccountDetails from "../Components/Card/AccountDetails";
+import {TbCurrencyNaira} from 'react-icons/tb'
+import ToggleSwitch from "../Components/Toggle/ToggleSwitch";
 
 const Profile = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const pocketImgLink =
     "https://storage.googleapis.com/piggybankservice.appspot.com/statics/connect-Pocket.jpg";
 
   const profileImage =
     "https://storage.googleapis.com/piggybankservice.appspot.com/agent_pics/logo8820da29ff.jpeg";
+
+  const naira = <TbCurrencyNaira />
   return (
     <Account>
       {/* Name coming from backend. consume */}
@@ -40,7 +45,7 @@ const Profile = () => {
         </section>
         <section className="div__right">
           <div className="right__top">
-            <div className="right__top-Img" onClick={() => navigate('/')}>
+            <div className="right__top-Img" onClick={() => navigate("/")}>
               <img src={profileImage} alt="profile Image" srcset="" />
 
               <div className="right__top-hover">
@@ -52,7 +57,39 @@ const Profile = () => {
               <TopHeader title={"name"} style={{ margin: "0 auto" }} />
             </span>
           </div>
-          
+          <div className="right__bottom">
+            <aside>
+              <AccountDetails
+                title={"0123456789"}
+                subtitle={"Flex number by Wema"}
+                path={'/'}
+              />
+              <AccountDetails
+                title={"#BlueBlacYello"}
+                subtitle={"Pigglink ID"}
+                path={'/'}
+              />
+            </aside>
+            <aside className="aside2">
+              <AccountDetails
+                title={"0"}
+                subtitle={"Piggy Points"}
+                path={'/'}
+              />
+              <AccountDetails
+                title={ `${naira}` + '0'}
+                subtitle={"Referral Earnings"}
+                path={'/'}
+              />
+            </aside>
+          </div>
+          <footer className="right__footer">
+            <p className="right__footer">
+              Show Dashboard Balance
+            </p>
+            <div className="spacer"/>
+            <ToggleSwitch />
+          </footer>
         </section>
       </main>
     </Account>
@@ -91,7 +128,6 @@ const Account = styled.main`
         position: relative;
         overflow: hidden;
         transition: 0.3s ease-in-out;
-        
 
         & img {
           object-fit: cover;
@@ -100,7 +136,6 @@ const Account = styled.main`
           border-radius: 50%;
           z-index: 1;
         }
-
 
         &:hover {
           cursor: pointer;
@@ -114,8 +149,6 @@ const Account = styled.main`
             display: flex;
             justify-content: center;
             z-index: 99;
-            
-            
 
             & svg {
               margin: 0 auto;
@@ -128,6 +161,29 @@ const Account = styled.main`
         display: none;
       }
     }
+    .right__bottom{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .right__bottom aside2{
+      
+    }
+    .right__footer{
+      display: flex;
+      justify-content: space-between !important;
+      align-items: flex-start;
+    }
+    .right__footer p{
+      font-size: 23px;
+      font-weight: bold;
+    }
+    .right__footer spacer{
+      flex: 1;
+    }
+    
   }
 `;
 
