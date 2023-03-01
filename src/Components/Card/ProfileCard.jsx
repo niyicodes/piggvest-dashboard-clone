@@ -1,35 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import {FaPercent} from 'react-icons/fa'
+import { FaPercent } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const ProfileCard = ({}) => {
-  return <Card>
-    <section className="card__div">
-        
-        <span className="card__div-span">
-            <FaPercent />
-        </span>
-        <span className="card__div-text">
-            Today's rate
-        </span>
-    </section>
-  </Card>
+const ProfileCard = ({icon, name, color, path }) => {
+  const navigate = useNavigate()
+  return (
+    <Card onClick={() => navigate(`${path}`)}>
+      {/* <Link to={'/'}> */}
+        <section className="card__div">
+          <div className="card__div-span">
+            {icon}
+          </div>
+          <span className="card__div-text">{name}</span>
+        </section>
+      {/* </Link> */}
+    </Card>
+  );
 };
 
 const Card = styled.main`
-.card__div{
-    border: 1px solid #CFDBE0;
+  .card__div {
+    border: 1px solid #cfdbe0;
     padding: 20px;
-    max-width: 303px;
+    max-width: 403px;
     border-radius: 10px 10px 10px 0;
-}
-.card__div-text{
-    color: #AA6982;
+    margin: 20px 0;
+  }
+  .card__div:hover{
+    cursor: pointer;
+  }
+  .card__div-text {
+    color: #aa6982;
     margin-left: 10px;
-    font-size: 14px;
-    padding-top: -5px;
-    text-transform: capitalize;
-}
-`
+    font-size: 18px;
+  }
+  .card__div-span{
+    display: inline-block;
+  }
+`;
 
 export default ProfileCard;
