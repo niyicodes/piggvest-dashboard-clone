@@ -17,10 +17,12 @@ import Piggybank from "./Pages/Piggybank"
 import Safelock from "./Pages/Safelock"
 import Targets from "./Pages/Targets"
 import FlexNaira from "./Pages/FlexNaira"
+import savingDetails from "./Components/Card/savingDetails";
 function App() {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);
  const [investment, setInvestment] = useState(investments);
+ 
  return (
   <div className="app">
    <SideBar />

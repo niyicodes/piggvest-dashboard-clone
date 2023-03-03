@@ -1,20 +1,28 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import styled from 'styled-components'
-import TopHeader from '../Components/Heading/TopHeader'
-import SavingsNav from '../Components/Nav/SavingsNav'
+import React from "react";
+import { Outlet, useLocation, useParams } from "react-router-dom";
+import styled from "styled-components";
+import TopHeader from "../Components/Heading/TopHeader";
+import SavingsNav from "../Components/Nav/SavingsNav";
 
 const AllSavings = () => {
-  return (
-    <ALLSAVINGS>
-      <TopHeader title={"Piggybank"} img/>
-      <SavingsNav />
-      <Outlet />
-    </ALLSAVINGS>
-  )
-}
+
+ const location = useLocation();
+ console.log(location.pathname);
+ const pagetitle = location.pathname
+ let name = pagetitle.replace('/savings/', '')
+ console.log(name)
+ return (
+  <ALLSAVINGS>
+   <TopHeader title={name} img />
+   <SavingsNav />
+   <Outlet />
+  </ALLSAVINGS>
+ );
+};
 
 const ALLSAVINGS = styled.section`
-  
-`
-export default AllSavings
+font-family: 'Source Sans Pro', sans-serif;
+
+
+`;
+export default AllSavings;

@@ -7,16 +7,16 @@ const SavingsNav = () => {
  return (
   <SAVINGS_NAV>
    <ul>
-    <NavLink to="/savings/piggy" activeClassName="">
+    <NavLink to="piggy" activeClassName="">
      <span>{Shield}</span> Piggybank
     </NavLink>
-    <NavLink to="/savings/safelock" activeClassName="">
+    <NavLink to="safelock" activeClassName="">
      <span>{Lock}</span> Safelock
     </NavLink>
-    <NavLink to="/savings/target" activeClassName="">
+    <NavLink to="target" activeClassName="">
      <span>{Target}</span> Targets
     </NavLink>
-    <NavLink to="/savings/flex" activeClassName="">
+    <NavLink to="flex" activeClassName="">
      <span>{Film}</span> Flex Naira
     </NavLink>
     <NavLink to="/" activeClassName="">
@@ -30,6 +30,7 @@ const SavingsNav = () => {
 const SAVINGS_NAV = styled.nav`
 border-bottom: 3px solid gray;
 padding-bottom: 5px;
+margin-bottom: 1.5rem;
  ul {
   display: flex;
 

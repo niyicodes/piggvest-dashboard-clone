@@ -8,7 +8,7 @@ const savingDetails = [
   balance: "₦300,000",
   bgColor: "rgb(204, 240, 254)",
   colour: "rgb(13, 96, 216)",
-  path: "/savings/piggy",
+  path: "piggy",
  },
  {
   icon: Film,
@@ -17,7 +17,7 @@ const savingDetails = [
   balance: "₦300,000",
  bgColor: "rgb(255, 244,250)",
   colour: "#EA4FA2",
-  path: "/savings/flex",
+  path: "flex",
  },
  {
   icon: Lock,
@@ -26,7 +26,7 @@ const savingDetails = [
   balance: "₦1,000,000",
   bgColor: "rgba(34,149,242, 0.28)",
   colour: "#2295F2",
-  path: "/savings/safelock",
+  path: "safelock",
  },
  {
   icon: Target,
@@ -35,7 +35,7 @@ const savingDetails = [
   balance: "₦1,000,000",
   bgColor: "rgba(239, 252, 245,1)",
   colour: "#10B259",
-  path: "/savings/target",
+  path: "target",
  },
  {
   icon: Dollar,

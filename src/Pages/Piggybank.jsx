@@ -1,9 +1,113 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+import Balance from "../Components/Balance/Balance";
+import { Power } from "../Components/Icons/Icons";
+import Interest from "../Components/Interest/Interest";
+import TransactionNav from "../Components/Nav/TransactionNav";
+import Transaction from "../Components/Transaction/Transaction";
+
+
 
 const Piggybank = () => {
-  return (
-    <div>Piggybank</div>
-  )
-}
+ return (
+  <PIGGYBANK>
+   <div className="top">
+    <Balance />
+    <Interest />
+   </div>
+   <div className="others">
+   <div className="transaction-area">
+   <h5>TRANSCTIONS</h5>
+    <TransactionNav />
+    <div>
+    <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+      <Transaction />
+    </div>
+   </div>
+   <div className="savings-info">
+     <h2>SAVINGS INFO</h2>
+     <div className="info">
+     <div>
+       <p>AutoSave Deposit</p>
+       <h4>₦1,000 <span>daily</span></h4>
+     </div>
+     <div>
+       <p>Next Withdrawal</p>
+       <h4>19th Aug 2023</h4>
+     </div>
+     </div>
+     <h3><span>{Power}</span> Turn On AutoSave</h3>
+   </div>
+   </div>
+  </PIGGYBANK>
+ );
+};
 
-export default Piggybank
+const PIGGYBANK = styled.main`
+.top{
+  display:flex;
+  width:100%;
+  gap: 2rem;
+
+  .balance{
+    width:65%;
+    
+  }
+  .interest{
+    width: 35%;
+    h2{
+    color: rgb(13, 96, 216);
+   }
+  }
+}
+.others{
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  .transaction-area{
+    width: 60%;
+    border: 1px solid gray;
+    padding: 15px;
+  }
+  .active{
+    background-color: rgb(13, 96, 216);
+  }
+
+  .savings-info{
+    height: 180px;
+    margin-left: auto;
+    h2{
+      font-size: 15px;
+    }
+    padding: 20px 15px;
+    border: 1px solid gray;
+    border-radius: 10px 8px 0 6px;
+    .info{
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid gray;
+      padding: 10px 0;
+      > div{
+        border: 1px solid gray;
+    border-radius: 10px 8px 0 6px;
+        padding: 10px;
+      }
+    }
+    h3{
+      font-size: 20px;
+      text-align: center;
+
+    }
+  }
+}
+`;
+export default Piggybank;
