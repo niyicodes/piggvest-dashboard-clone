@@ -5,6 +5,7 @@ label {
     height: 30px;
     background-color: grey;
     border-radius: 20px;
+    margin-top: 18px;
   }
   
   input {
@@ -13,7 +14,7 @@ label {
     height: 0;
   }
   
-  span {
+  label .toggleSpan {
     /* position: absolute; */
     cursor: pointer;
     top: 0;
@@ -34,7 +35,7 @@ label {
     cursor: pointer;
   }
   
-  span:before {
+  label .toggleSpan:before {
     position: absolute;
     content: "";
     height: 25px;
@@ -46,11 +47,12 @@ label {
     transition: 0.3s;
   }
   
-  input:checked + span {
+  
+  input:checked + .toggleSpan {
     background-color: #00c853;
   }
   
-  input:checked + span:before {
+  input:checked + .toggleSpan:before {
     transform: translateX(29px);
   }
   

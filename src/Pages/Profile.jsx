@@ -19,13 +19,10 @@ const Profile = () => {
     "https://storage.googleapis.com/piggybankservice.appspot.com/agent_pics/logo8820da29ff.jpeg";
 
   const naira = <TbCurrencyNaira />;
-  
+
   const logState = (state) => {
     console.log("Toggled:", state);
   };
-  
-  
-   
 
   return (
     <Account>
@@ -199,8 +196,11 @@ const Account = styled.main`
     .account .div__right {
       margin-left: 0;
     }
-    
-
+  }
+  @media screen and (max-width: 763px){
+    .div__right .right__bottom {
+      flex-direction: column;
+    }
   }
 `;
 

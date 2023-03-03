@@ -11,9 +11,9 @@ export default function ToggleSwitch({ toggled, onClick }) {
   };
 
   return (
-    <label>
+    <label style={{background : isToggled === true ? 'green' : null} }>
       <input type="checkbox" defaultChecked={isToggled} onClick={callback} />
-      <span></span>
+      <span className="toggleSpan"></span>
     </label>
   );
 }
