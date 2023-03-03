@@ -193,11 +193,21 @@ const Account = styled.main`
     .account {
       flex-direction: column-reverse;
     }
+
     .account .div__right {
       margin-left: 0;
     }
+    .div__left {
+      &-img {
+        width: 439px;
+        height: 200px;
+      }
+    }
+    .div__right .right__bottom {
+      justify-content: space-around;
+    }
   }
-  @media screen and (max-width: 763px){
+  @media screen and (max-width: 763px) {
     .div__right .right__bottom {
       flex-direction: column;
     }

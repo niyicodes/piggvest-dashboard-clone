@@ -24,7 +24,7 @@ const Card = styled.main`
   .card__div {
     border: 1px solid #cfdbe0;
     padding: 20px;
-    max-width: 403px;
+    width: 403px;
     border-radius: 10px 10px 10px 0;
     margin: 20px 0;
   }
@@ -38,6 +38,11 @@ const Card = styled.main`
   }
   .card__div-span{
     display: inline-block;
+  }
+  @media screen and (max-width: 1024px){
+    .card__div{
+      width: 100%;
+    }
   }
 `;
 
