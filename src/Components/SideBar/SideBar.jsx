@@ -49,7 +49,7 @@ const SideBar = () => {
        to={item.path}
        key={index}
        className="link"
-       activeclassName="active"
+       
       >
        <div className="icon">{item.icon}</div>
        <h3 style={{ display: isOpen ? "block" : "none" }} className="link_text">

@@ -11,7 +11,14 @@ const MyInvestments = () => {
      return <p>{invest.name}</p>;
     })
    ) : (
-    <InvestNow />
+    <InvestNow
+     title={"Start Investing"}
+     subtitle={
+      "Start investing in verified opportunities. Let's help you get started."
+     }
+     btn1={"INVEST NOW"}
+     btn2={"LEARN MORE"}
+    />
    )}
   </Mine>
  );

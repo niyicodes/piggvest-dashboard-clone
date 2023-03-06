@@ -2,18 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import { CircleFill } from "../Icons/Icons";
 
-const Transaction = ({ icon, id, date }) => {
+const Transaction = ({ details, amount, action, id }) => {
+ function randomDate(start, end) {
+  return new Date(
+   start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+ }
+ const date = randomDate(new Date(2018, 0, 1), new Date());
+ const myDate = date.toString();
+
  return (
   <TRANSACTION>
    <div className="info">
-    <div>{CircleFill}</div>
+    <div style={{'color': action === "credit" ? "green" : "red"}}>{CircleFill}</div>
     <div>
-     <p>Funds from here to here . Transfer ID:lsdfjklfldfjklfjkldfjklsdfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj {}</p>
-     <small>Fri, 21 May 2021 15:54:56 GMT</small>
+     <p>
+      {details}. Transfer ID:{id}
+     </p>
+     <small>{myDate}</small>
     </div>
    </div>
    <div>
-    <h4>₦50,000</h4>
+    <h4 style={{'color': action === "credit" ? "green" : "red"}}>{action === "debit" ? "-" : "" }{amount}</h4>
    </div>
   </TRANSACTION>
  );
@@ -22,7 +32,7 @@ const Transaction = ({ icon, id, date }) => {
 const TRANSACTION = styled.div`
  display: flex;
  justify-content: space-between;
- gap: 1rem;
+ gap: rem;
  padding: 10px 0;
 
  .info {
@@ -31,13 +41,16 @@ const TRANSACTION = styled.div`
   align-items: center;
   /* justify-content: space-between; */
 
-  p{
-   font-size: 13px;
-   font-family: 'Roboto Condensed', sans-serif;
+  p {
+   font-size: 12px;
+   font-family: "Roboto Condensed", sans-serif;
   }
-  small{
+  small {
    font-size: 10px;
   }
+ }
+ h4{
+  font-size: 12px;
  }
 `;
 export default Transaction;

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Interest = () => {
+const Interest = ({percent}) => {
   return (
     <INTEREST className='interest'>
      <h5>INTEREST RATE</h5>
-      <h2>10%</h2>
+      <h2>{percent}</h2>
       <small>Per Annum</small>
     </INTEREST>
   )

@@ -12,12 +12,19 @@ import TopHeader from "../Components/Heading/TopHeader";
 import GetApp from "../Components/APPS/GetApp";
 
 const Home = () => {
+ const refreshPage = () => {
+  window.location.reload();
+ };
  return (
   <HomePage>
    <div className="top">
-    <TopHeader title="NAME" subtitle={"wash your hands, it's lunch time !"} img/>
+    <TopHeader
+     title="NAME"
+     subtitle={"wash your hands, it's lunch time !"}
+     img
+    />
     <div className="top-second">
-     <BiRefresh />
+     <BiRefresh onClick={refreshPage} />
      <Button name="+ QUICK SAVE" />
     </div>
    </div>
@@ -101,11 +108,11 @@ const Home = () => {
 };
 const HomePage = styled.section`
  .top {
-  h3{
-   font-family: 'Roboto Condensed', sans-serif;
+  h3 {
+   font-family: "Roboto Condensed", sans-serif;
   }
-  p{
-   font-family: 'Source Sans Pro', sans-serif;
+  p {
+   font-family: "Source Sans Pro", sans-serif;
   }
   &-second {
    display: flex;
@@ -173,7 +180,6 @@ const HomePage = styled.section`
      }
     }
     &-bottom {
-     
     }
    }
   }
