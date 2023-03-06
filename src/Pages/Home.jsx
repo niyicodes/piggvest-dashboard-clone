@@ -24,6 +24,56 @@ const Home = () => {
           <BiRefresh />
           <Button name="+ QUICK SAVE" />
         </div>
+
+ const refreshPage = () => {
+  window.location.reload();
+ };
+ return (
+  <HomePage>
+   <div className="top">
+    <TopHeader
+     title="NAME"
+     subtitle={"wash your hands, it's lunch time !"}
+     img
+    />
+    <div className="top-second">
+     <BiRefresh onClick={refreshPage} />
+     <Button name="+ QUICK SAVE" />
+    </div>
+   </div>
+   <div className="middle">
+    <div className="middle-first">
+     {horizontalCardDetails.map((item, index) => {
+      return (
+       <HorizontalCard
+        icon={item.icon}
+        key={index}
+        name={item.name}
+        balance={item.balance}
+        bgColor={item.bgColor}
+        colour={item.colour}
+        path={item.path}
+       />
+      );
+     })}
+    </div>
+    <div className="middle-second">
+     <div className="middle-second-left">
+      <div className="middle-second-left-top">
+       <p>TO-DO LIST</p>
+       <RadioList
+        title="Turn on your Piggybank AutoSave"
+        onClick={() => console.log("testing")}
+        icon={Circle}
+        border="2px solid grey"
+       />
+       <RadioList
+        title="Safelock ₦30,000 for 61 - 90 days"
+        onClick={() => console.log("testing")}
+        icon={Circle}
+        border="2px solid grey"
+       />
+
       </div>
       <div className="middle">
         <div className="middle-first">
@@ -104,13 +154,73 @@ const Home = () => {
   );
 };
 const HomePage = styled.section`
+
   .top {
     h3 {
       font-family: "Roboto Condensed", sans-serif;
+
+ .top {
+  h3 {
+   font-family: "Roboto Condensed", sans-serif;
+  }
+  p {
+   font-family: "Source Sans Pro", sans-serif;
+  }
+  &-second {
+   display: flex;
+   justify-content: space-between;
+   margin: 0 3rem 0 0;
+   p {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+   }
+   svg {
+    font-size: 30px;
+    font-weight: bolder;
+   }
+   button {
+    padding: 10px 20px;
+    background-color: rgb(13, 96, 216);
+    outline: none;
+    border: none;
+    border-radius: 10px 7px 7px 0;
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+   }
+  }
+ }
+ .middle {
+  &-first {
+   display: inline-block;
+   width: 100%;
+   cursor: pointer;
+   overflow-x: scroll;
+   white-space: nowrap;
+   padding-right: 1.5rem;
+   margin-bottom: 2rem;
+
+   svg {
+    color: white;
+   }
+  }
+  &-second {
+   display: flex;
+   flex-direction: row;
+   gap: 2rem;
+
+   &-left {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    width: 60%;
+    &-top,
+    &-bottom {
+     margin-bottom: 2.5rem;
+
     }
     p {
       font-family: "Source Sans Pro", sans-serif;
     }
+
     &-second {
       display: flex;
       justify-content: space-between;
@@ -132,6 +242,9 @@ const HomePage = styled.section`
         color: white;
         font-family: "Source Sans Pro", sans-serif;
       }
+
+    &-bottom {
+
     }
   }
   .middle {

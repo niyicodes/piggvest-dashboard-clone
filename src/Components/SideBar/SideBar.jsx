@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { BiRocket } from "react-icons/bi";
-import { GiHamburgerMenu, GiPowerButton } from "react-icons/gi";
-import { ImHome2 } from "react-icons/im";
-import { RxTarget, RxPerson } from "react-icons/rx";
+import { NavLink } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxTarget } from "react-icons/rx";
 import "./Sidebar.css";
+import { Home, Menu, Person, Power, Rocket, } from "../Icons/Icons";
+
 const SideBar = () => {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);
@@ -13,7 +13,7 @@ const SideBar = () => {
   {
    path: "/",
    name: "Home",
-   icon: <ImHome2 />,
+   icon: Home,
   },
   {
    path: "/savings",
@@ -23,12 +23,12 @@ const SideBar = () => {
   {
    path: "/investify",
    name: "Invest",
-   icon: <BiRocket />,
+   icon: Rocket,
   },
   {
    path: "/settings",
    name: "Account",
-   icon: <RxPerson />,
+   icon: Person,
   },
  ];
  return (
@@ -49,7 +49,7 @@ const SideBar = () => {
        to={item.path}
        key={index}
        className="link"
-       activeclassName="active"
+       
       >
        <div className="icon">{item.icon}</div>
        <h3 style={{ display: isOpen ? "block" : "none" }} className="link_text">
@@ -59,7 +59,7 @@ const SideBar = () => {
      ))}
     </div>
     <div className="logout">
-     <GiPowerButton />
+     {Power}
     </div>
    </div>
 

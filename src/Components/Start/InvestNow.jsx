@@ -1,18 +1,19 @@
 import React from "react";
 import Button from "../Button/Button";
 import styled from "styled-components";
-
-const InvestNow = () => {
+import Target from "/assets/target.png"
+const InvestNow = ({img, title, subtitle, btn1, btn2}) => {
  return (
   <INVESTNOW className="area">
-   <h4>Start Investing</h4>
-   <p>Start investing in verified opportunities. Let's help you get started.</p>
+   {img && <img src={Target} alt="" />}
+   <h4>{title}</h4>
+   <p>{subtitle}</p>
    <div className="btns">
     <div className="btn-block">
-     <Button name={"INVEST NOW"} className="btn btn-block" />
+     <Button name={btn1} className="btn btn-block" />
     </div>
     <div className="btn-transparent">
-     <Button name={"LEARN MORE"} />
+     <Button name={btn2} />
     </div>
    </div>
   </INVESTNOW>
@@ -22,6 +23,9 @@ const InvestNow = () => {
 const INVESTNOW = styled.div`
  padding: 15px 20px;
  text-align: center;
+ img{
+  width: 50%;
+ }
  h4 {
   font-size: 40px;
   color: #7913e5;
@@ -34,7 +38,7 @@ const INVESTNOW = styled.div`
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  width: 30%;
+  /* width: 30%; */
   margin: 1rem auto;
 
   button {

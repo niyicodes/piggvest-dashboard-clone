@@ -5,15 +5,15 @@ import { Done, Explore, Target } from "../Icons/Icons";
 
 const Nav = () => {
  return (
-  <Navbar>
+  <Navbar className="mini-nav">
    <ul>
-    <NavLink to="" activeClassName="active">
+    <NavLink to="/investify">
      <span>{Target}</span> My investments
     </NavLink>
-    <NavLink to="explore" activeClassName="active">
+    <NavLink to="explore">
      <span>{Explore}</span>Explore
     </NavLink>
-    <NavLink to="completed" activeClassName="active">
+    <NavLink to="completed">
      <span>{Done}</span> Completed
     </NavLink>
    </ul>
@@ -54,6 +54,14 @@ const Navbar = styled.nav`
     svg {
      color: #7913e5 !important;
     }
+   }
+  }
+ }
+ @media screen and (max-width: 844px){
+  margin-left: 1rem;
+  ul{
+   a{
+    font-size: 12px;
    }
   }
  }
