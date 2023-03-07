@@ -18,6 +18,7 @@ import Safelock from "./Pages/Safelock"
 import Targets from "./Pages/Targets"
 import FlexNaira from "./Pages/FlexNaira"
 import savingDetails from "./Components/Card/savingDetails";
+
 function App() {
  const [isOpen, setIsOpen] = useState(false);
  const toggle = () => setIsOpen(!isOpen);

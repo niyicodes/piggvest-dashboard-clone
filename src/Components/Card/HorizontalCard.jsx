@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const HorizontalCard = ({ icon, name, balance, bgColor, colour, path, title, subtitle }) => {
+const HorizontalCard = ({ icon, name, balance, bgColor, colour, path, title, subtitle , img}) => {
  const navigate = useNavigate()
  return (
   <HorizonCard style={{ backgroundColor: `${bgColor}` }} onClick={() => navigate(`${path}`)} className="horizcard">
@@ -12,7 +12,9 @@ const HorizontalCard = ({ icon, name, balance, bgColor, colour, path, title, sub
     <h5 style={{ color: `${colour}` }}>{title}</h5>
     <h3>{subtitle}</h3>
     <h4 style={{ color: `${colour}` }}>{balance}</h4>
+    {img && <img src={img} alt={name} className='cardImg'/>}
    </div>
+  
   </HorizonCard>
  );
 };
@@ -46,6 +48,11 @@ const HorizonCard = styled.div`
  .text-area{
   display: flex;
   flex-direction: column;
+ }
+ .text-area .cardImg{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
  }
 `;
 export default HorizontalCard;
