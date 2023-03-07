@@ -108,6 +108,7 @@ const Home = () => {
  );
 };
 const HomePage = styled.section`
+padding-right: 1rem;
  .top {
   h3 {
    font-family: "Roboto Condensed", sans-serif;
@@ -186,6 +187,7 @@ const HomePage = styled.section`
   }
  }
  @media screen and (max-width: 926px) {
+  padding-right: 0;
   .top {
    &-first {
     h2 {

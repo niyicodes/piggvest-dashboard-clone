@@ -2,26 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import piggywhite from "/assets/piggywhite.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, logInWithEmailAndPassword } from "../Firebase/firebase";
+
 
 
 const SignIn = () => {
  const [email, setEmail] = useState("")
  const [password, setPassword] = useState("")
- const [user, loading, error] = useAuthState(auth);
+
 
  const navigate = useNavigate();
-
- useEffect(() => {
-  if (loading) {
-   // maybe trigger a loading screen
-   return;
-  }
-  if (user) navigate("/");
- }, [user, loading]);
-
- console.log(user)
+ 
  
  return (
   <Login className="login">

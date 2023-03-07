@@ -77,6 +77,9 @@ const Top = styled.div`
  }
  .top-img {
   margin-right: 0;
+  &:hover{
+    cursor: pointer;
+  }
   img {
    width: 70px;
   }
