@@ -22,6 +22,8 @@ const ProfileCard = ({icon, name, color, path }) => {
 
 const Card = styled.main`
   .card__div {
+    display: flex;
+    align-items: center;
     border: 1px solid #cfdbe0;
     padding: 20px;
     width: 403px;

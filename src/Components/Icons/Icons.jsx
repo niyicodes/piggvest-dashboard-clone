@@ -1,4 +1,4 @@
-import { AiOutlineInfoCircle, AiOutlineShareAlt } from "react-icons/ai";
+import { AiOutlineInfoCircle, AiOutlineShareAlt, AiOutlineSearch } from "react-icons/ai";
 import {
   FiDollarSign,
   FiAtSign,
@@ -9,25 +9,13 @@ import {
   FiPaperclip,
   FiCreditCard,
   FiLogOut,
+  FiPercent,
 } from "react-icons/fi";
 import { BiFilm, BiTrendingUp, BiLockAlt } from "react-icons/bi";
-import { BsShield, BsCircle } from "react-icons/bs";
 import { MdOutlineExplore, MdOutlineCall } from "react-icons/md";
-import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { FaPercent } from "react-icons/fa";
 import { RiBookLine } from "react-icons/ri";
-=======
-import { AiOutlineInfoCircle, AiOutlineSearch } from "react-icons/ai";
-import {
- FiDollarSign,
- FiAtSign,
- FiThumbsUp,
- FiTarget,
- FiPercent,
-} from "react-icons/fi";
-import { BiFilm, BiTrendingUp, BiLockAlt } from "react-icons/bi";
 import { BsShield, BsCircle, BsCircleFill, BsArrowLeft } from "react-icons/bs";
-import { MdOutlineExplore } from "react-icons/md";
 import { GiGreekTemple } from "react-icons/gi";
 import { IoCheckmarkDoneCircleOutline, IoSettingsSharp } from "react-icons/io5";
 import { GiHamburgerMenu, GiPowerButton } from "react-icons/gi";
@@ -69,7 +57,7 @@ export const OutlineCall = <MdOutlineCall size={28} />;
 export const BookLine = <RiBookLine size={28} />;
 
 export const Search = <AiOutlineSearch />;
-export const Percent = <FiPercent />;
+// export const Percent = <FiPercent />;
 export const Temple = <GiGreekTemple />;
 export const Settings = <IoSettingsSharp />;
 
